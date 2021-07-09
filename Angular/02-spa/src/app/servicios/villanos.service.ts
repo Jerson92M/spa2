@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Heroe } from '../components/shared/interfaces/heroe.interface';
+import { Villano } from "./../components/shared/interfaces/villano.interface";
 
 @Injectable()
-export class HeroesService {
+export class VillanosService {
 
-  private heroes: Heroe[] = [
+  private villanos: Villano[] = [
     {
-      nombre: "Aquaman",
+      nombre: "Jerson",
       bio: "El poder más reconocido de Aquaman es la capacidad telepática para comunicarse con la vida marina, la cual puede convocar a grandes distancias.",
       img: "assets/img/aquaman.png",
       aparicion: "1941-11-01",
       casa: "DC"
     },
     {
-      nombre: "Batman",
+      nombre: "Alcides",
       bio: "Los rasgos principales de Batman se resumen en «destreza física, habilidades deductivas y obsesión». La mayor parte de las características básicas de los cómics han variado por las diferentes interpretaciones que le han dado al personaje.",
       img: "assets/img/batman.png",
       aparicion: "1939-05-01",
@@ -56,35 +56,34 @@ export class HeroesService {
     }
   ];
 
-  constructor() {
-    console.log("Servicio Arriba!!!");
+  constructor() { }
+
+  getVillanos(): Villano[] {
+    return this.villanos;
   }
 
-  getHeroes(): Heroe[] {
-    return this.heroes;
+  getVillano(idx: string) {
+    return this.villanos[idx];
   }
-  getHeroe(idx: string) {
-    return this.heroes[idx];
-  }
-  buscarHeroes(termino: string): Heroe[] {
 
-    let heroesArr: Heroe[] = [];
+  buscarVillanos(termino: string): Villano[] {
+
+    let villanosArr: Villano[] = [];
     termino = termino.toLowerCase();
 
-    for (let index = 0; index < this.heroes.length; index++) {
+    for (let index = 0; index < this.villanos.length; index++) {
 
-      this.heroes[index].idx = index;
-      let heroe = this.heroes[index];
+      this.villanos[index].idx = index;
+      let villano = this.villanos[index];
 
-      let nombre = heroe.nombre.toLowerCase();
+      let nombre = villano.nombre.toLowerCase();
 
       // batman  == b
       if (nombre.indexOf(termino) >= 0) {
-        heroesArr.push(heroe);
+        villanosArr.push(villano);
       }
 
     }
-    return heroesArr;
+    return villanosArr;
   }
-
 }

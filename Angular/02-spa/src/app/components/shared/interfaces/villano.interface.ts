@@ -1,6 +1,5 @@
-import { StringLiteralLike } from "typescript";
 
-export interface Heroe {
+export interface Villano {
   nombre: string;
   bio: string;
   img: string;

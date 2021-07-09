@@ -1,7 +1,6 @@
-
 <h1>Buscando: <small>{{ termino }}</small></h1>
 <hr>
-<div class="row animated fadeIn fast" *ngIf="heroes.length==0">
+<div class="row animated fadeIn fast" *ngIf="heroes.length==0 && villanos.length==0">
     <div class="col">
         <div>
             NO EXISTEN RESULTADOS CON EL TERMINO: {{ termino }}
@@ -10,5 +9,8 @@
 </div>
 
 <div class="card-columns">
-    <app-heroe-tarjeta [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
+    <app-heroe-tarjeta [heroe]="heroe" [index]="heroe.idx" *ngFor="let heroe of heroes; let i = index">
+    </app-heroe-tarjeta>
+    <app-villano-tarjeta [villano]="villano" [index]="villano.idx" *ngFor="let villano of villanos; let i = index">
+    </app-villano-tarjeta>
 </div>
