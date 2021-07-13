@@ -20,6 +20,7 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
 import { VillanosComponent } from './components/villanos/villanos.component';
 import { VillanoTarjetaComponent } from './components/villano-tarjeta/villano-tarjeta.component';
 import { VillanoComponent } from './components/villano/villano.component';
+import { CifradoPipe } from './pipes/cifrado.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { VillanoComponent } from './components/villano/villano.component';
     BuscadorComponent,
     VillanosComponent,
     VillanoTarjetaComponent,
-    VillanoComponent
+    VillanoComponent,
+    CifradoPipe
   ],
   imports: [
     BrowserModule,
